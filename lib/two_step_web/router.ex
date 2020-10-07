@@ -20,10 +20,10 @@ defmodule TwoStepWeb.Router do
     live "/", PageLive, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", TwoStepWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", TwoStepWeb do
+    pipe_through :api
+    get "/one", OneController, :index
+  end
 
   # Enables LiveDashboard only for development
   #
@@ -39,5 +39,23 @@ defmodule TwoStepWeb.Router do
       pipe_through :browser
       live_dashboard "/dashboard", metrics: TwoStepWeb.Telemetry
     end
+  end
+
+  scope "/developer" do
+    forward "/", PhoenixSwagger.Plug.SwaggerUI,
+      otp_app: :two_step,
+      swagger_file: "swagger.json",
+      disable_validator: true
+  end
+
+  forward "/alternate", TwoStepWeb.AlternateRouter
+
+  def swagger_info do
+    %{
+      info: %{
+        version: "1.0",
+        title: "My App"
+      }
+    }
   end
 end
