@@ -1,5 +1,11 @@
 # TwoStep
 
+Spike on setting up two routers each with its own swagger documentation
+
+<p align="center">
+  <img src="https://github.com/barberj/two_step/blob/master/demo.png" />
+</p>
+
 To start your Phoenix server:
 
   * Setup the project with `mix setup`
