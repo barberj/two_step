@@ -3,7 +3,7 @@
 Spike on setting up two routers each with its own swagger documentation
 
 <p align="center">
-  <img src="https://github.com/barberj/two_step/blob/master/demo.png" />
+  <img src="https://github.com/barberj/two_step/blob/master/demo.gif" />
 </p>
 
 To start your Phoenix server:
